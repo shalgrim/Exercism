@@ -2,3 +2,5 @@
 python/venv/*
 node_modules
 *.pyc
+package-lock.json
+
