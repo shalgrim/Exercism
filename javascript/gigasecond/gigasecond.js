@@ -1,3 +1,4 @@
-export const gigasecond = () => {
-  throw new Error("Remove this statement and implement this function");
+export const gigasecond = (d) => {
+  d.setSeconds(d.getSeconds() + 1000000000);
+  return d;
 };
