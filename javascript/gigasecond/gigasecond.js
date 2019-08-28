@@ -1,11 +1,8 @@
 export const gigasecond = (d) => {
-  const billion = 1000000000;
+  const trillion_milliseconds = 1000000000000;
 
-  if (d.getYear() < 60) {
-    d.setSeconds(d.getSeconds() + billion);
-    d.setHours(d.getHours() - 1);
-  } else {
-      d.setSeconds(d.getSeconds() + 1000000000);
-  }
-  return d;
+  const input_time = d.getTime();
+  const later_date = new Date();
+  later_date.setTime(input_time + trillion_milliseconds);
+  return later_date;
 };
