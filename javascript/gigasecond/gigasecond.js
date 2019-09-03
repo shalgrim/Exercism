@@ -1,4 +1,5 @@
+const A_GIGASECOND_IN_MILLISECONDS = 1e12;
+
 export const gigasecond = (d) => {
-  const A_GIGASECOND = 1e12;
-  return new Date(d.getTime() + A_GIGASECOND);
+  return new Date(d.getTime() + A_GIGASECOND_IN_MILLISECONDS);
 }; 
