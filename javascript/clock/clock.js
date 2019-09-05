@@ -1,16 +1,23 @@
-//
-// This is only a SKELETON file for the 'Clock' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class Clock {
-  constructor(hour, minute) {
-    this.hour = hour;
-    this.minute = minute;
+  constructor(hour, minute=0) {
+    this.hour = (hour + Math.trunc(minute / 60)) % 24;
+    if (this.hour < 0) {
+      this.hour = 24 + this.hour;
+    }
+
+    if (minute < 0) {
+      this.hour -= 1;
+    }
+
+    this.minute = minute % 60;
+
+    if (this.minute < 0) {
+      this.minute = 60 + this.minute;
+    }
   }
 
   toString() {
-    const output = "";
+    let output = "";
     if (this.hour < 10)
     {
       output += "0";
@@ -27,7 +34,7 @@ export class Clock {
     return output;
   }
 
-  plus() {
+  plus(minute) {
     throw new Error('Remove this statement and implement this function');
   }
 
