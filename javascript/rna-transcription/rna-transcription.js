@@ -6,7 +6,8 @@ const dnaToRnaMap = {
 };
 
 export const toRna = (dna) => {
-  const chars = dna.split('');
-  const rnaValues = chars.map((d) => ( dnaToRnaMap[d] ));
-  return rnaValues.join('');
+  return dna
+      .split('')
+      .map((d) => ( dnaToRnaMap[d] ))
+      .join('');
 };
