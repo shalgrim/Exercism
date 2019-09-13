@@ -1,8 +1,8 @@
 const dnaToRnaMap = {
-  'G': 'C',
-  'C': 'G',
-  'T': 'A',
-  'A': 'U'
+  G: 'C',
+  C: 'G',
+  T: 'A',
+  A: 'U'
 };
 
 const dnaToRnaMapper = (d) => {
