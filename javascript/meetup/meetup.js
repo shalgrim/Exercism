@@ -15,11 +15,12 @@ export const meetupDay = (year, month, weekday, ordinal) => {
 
     if (ordinal == 'teenth') {
         date = new Date(year, month, 13);
-
-        while (date.getDay() != weekdayMapper[weekday]) {
-            date = new Date(year, month, date.getDate() + 1);
+        const diff = weekdayMapper[weekday] - date.getDay();
+        if (diff >= 0) {
+            date = new Date(year, month, 13 + diff);
+        } else {
+            date = new Date(year, month, 20 + diff);
         }
-
     }
     return date;
 };
