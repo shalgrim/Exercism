@@ -9,10 +9,10 @@ const weekdayMapper = {
 };
 
 const weeksToAdd = {
-    "1st": 0,
-    "2nd": 1,
-    "3rd": 2,
-    "4th": 3,
+    '1st': 0,
+    '2nd': 1,
+    '3rd': 2,
+    '4th': 3,
     '5th': 4,
 }
 
