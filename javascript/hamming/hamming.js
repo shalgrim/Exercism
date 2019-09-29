@@ -1,15 +1,25 @@
-//
-// This is only a SKELETON file for the 'Hamming' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const compareChars = (char1, char2) => {
+  if (char1 !== char2) {
+    return 1;
+  }
+  return 0;
+};
 
 export const compute = (strand1, strand2) => {
-  const hamming_distance = 0;
   if (strand1.length != strand2.length) {
-      throw new Error("Can only compare strands of equal length.");
+    if (strand1.length === 0) {
+      throw new Error("left strand must not be empty");
+    }
+
+    if (strand2.length === 0) {
+      throw new Error("right strand must not be empty");
+    }
+
+    throw new Error("left and right strands must be of equal length");
   }
 
-  strand1.map((character, index) => { character == strand2[index] ? hamming_distance++ : 0});
-
-  return hamming_distance;
+  const charDifferences = strand1
+    .split("")
+    .map((character, index) => compareChars(character, strand2[index]));
+  return charDifferences.reduce((x, y) => x + y, 0);
 };
