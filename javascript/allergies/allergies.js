@@ -1,18 +1,29 @@
-//
-// This is only a SKELETON file for the 'Allergies' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
+const ALLERGENS = [
+  'eggs',
+  'peanuts',
+  'shellfish',
+  'strawberries',
+  'tomatoes',
+  'chocolate',
+  'pollen',
+  'cats',
+]
 export class Allergies {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(number) {
+    this.bits = number.toString(2).split('').reverse().map(s => parseInt(s));
   }
 
   list() {
-    throw new Error("Remove this statement and implement this function");
+    const answer = [];
+    for (var i = 0; i < ALLERGENS.length; i++) {
+      if (this.bits[i]) {
+        answer.push(ALLERGES[i]);
+      }
+    }
+    return answer;
   }
 
-  allergicTo() {
-    throw new Error("Remove this statement and implement this function");
+  allergicTo(allergen) {
+    return this.bits[ALLERGENS.indexOf(allergen)] == 1;
   }
 }
