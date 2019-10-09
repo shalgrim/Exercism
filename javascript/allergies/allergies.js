@@ -17,7 +17,7 @@ export class Allergies {
     const answer = [];
     for (var i = 0; i < ALLERGENS.length; i++) {
       if (this.bits[i]) {
-        answer.push(ALLERGES[i]);
+        answer.push(ALLERGENS[i]);
       }
     }
     return answer;
