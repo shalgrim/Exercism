@@ -12,5 +12,5 @@ const ORBITAL_RATIOS = {
 const SECONDS_IN_EARTH_YEAR = 31557600;
 
 export const age = (planet, ageInSeconds) => {
-  return parseFloat(((ORBITAL_RATIOS[planet] * ageInSeconds) / SECONDS_IN_EARTH_YEAR).toFixed(2));
+  return parseFloat((ageInSeconds / SECONDS_IN_EARTH_YEAR / ORBITAL_RATIOS[planet]).toFixed(2));
 };
