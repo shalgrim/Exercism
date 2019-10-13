@@ -1,4 +1,4 @@
-function isPrime(number) {
+const isPrime = function(number) {
   console.log(`isPrime number: ${number}`)
   if (number < 2) {
     return false;
@@ -21,12 +21,13 @@ function isPrime(number) {
   return true;
 }
 
-export const primeFactors = number => {
+const primeFactors = number => {
   console.log(`number: ${number}`)
   let remaining = number;
   const answer = [];
   let lastPrime = 2;
-
+  
+  console.log(`remaining: ${remaining}`)
   while (remaining >=2) {
     console.log(`remaining: ${remaining}`)
     // return;  // last place where I can get stuff to stop
@@ -38,9 +39,12 @@ export const primeFactors = number => {
       console.log(`remaining: ${remaining}`)
     }
     console.log('through if')
-    // return;
+    // return;  // get it to stop here but not when testing...
 
-    for (let i = lastPrime; true; i++) {
+    console.log(`lastPrime: ${lastPrime}`); // 2
+    console.log(`remaining: ${remaining}`); // 1...so remaining % i is never 0
+    return;
+    for (let i = lastPrime; remaining > 1; i++) {
       if (isPrime(i) && remaining % i == 0) {
         answer.push(i);
         lastPrime = i;
@@ -52,3 +56,6 @@ export const primeFactors = number => {
 
   return answer;
 };
+
+// export {isPrime, primeFactors};
+module.exports = { isPrime, primeFactors };

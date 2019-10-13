@@ -1,9 +1,9 @@
 import { primeFactors } from './prime-factors';
 
 describe('primeFactors', () => {
-  xtest('returns an empty array for 1', () => expect(primeFactors(1)).toEqual([]));
+  test('returns an empty array for 1', () => expect(primeFactors(1)).toEqual([]));
 
-  test('factors 2', () => expect(primeFactors(2)).toEqual([2]));
+  xtest('factors 2', () => expect(primeFactors(2)).toEqual([2]));
 
   xtest('factors 3', () => expect(primeFactors(3)).toEqual([3]));
 
