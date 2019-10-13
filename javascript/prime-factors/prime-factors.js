@@ -43,7 +43,7 @@ const primeFactors = number => {
 
     console.log(`lastPrime: ${lastPrime}`); // 2
     console.log(`remaining: ${remaining}`); // 1...so remaining % i is never 0
-    return;
+    // return;
     for (let i = lastPrime; remaining > 1; i++) {
       if (isPrime(i) && remaining % i == 0) {
         answer.push(i);
