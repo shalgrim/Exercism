@@ -1,6 +1,8 @@
+import BigInt from './lib/big-integer'
+
 export class Grains {
   square(square_number) {
-    return Math.pow(2, square_number-1).toString();
+    return BigInt(2).pow(square_number-1).toString();
   }
 
   total() {
