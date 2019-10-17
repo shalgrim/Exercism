@@ -6,6 +6,11 @@ export class Grains {
   }
 
   total() {
-    throw new Error("Remove this statement and implement this function");
+    let total = BigInt.zero;
+    for (let i = 0; i < 64; i++) {
+      total = BigInt(2).pow(i).add(total);
+    }
+
+    return total.toString();
   }
 }
