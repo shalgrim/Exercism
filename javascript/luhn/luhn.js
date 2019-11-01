@@ -19,7 +19,7 @@ const digitDoubler = function(digit) {
 
 export class Luhn {
   constructor(number) {
-    this.number = number;
+    this.number = number.split(' ').reduce((x, y) => x + y);
   }
 
   get valid() {
