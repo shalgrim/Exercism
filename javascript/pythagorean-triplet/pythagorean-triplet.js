@@ -1,26 +1,43 @@
-//
-// This is only a SKELETON file for the 'Pythagorean Triplet' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+import { removeTypeDuplicates } from "@babel/types";
 
 export class Triplet {
-  constructor() {
-    throw new Error("Remove this statement and implement this function");
+  constructor(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
   }
 
   sum() {
-    throw new Error("Remove this statement and implement this function");
+    return [this.a, this.b, this.c].reduce((x, y) => x + y);
   }
 
   product() {
-    throw new Error("Remove this statement and implement this function");
+    return [this.a, this.b, this.c].reduce((x, y) => x * y);
   }
 
   isPythagorean() {
-    throw new Error("Remove this statement and implement this function");
+    return this.a ** 2 + this.b ** 2 == this.c ** 2;
   }
 
-  static where() {
-    throw new Error("Remove this statement and implement this function");
+  static where(o) {
+    const minFactor = o.minFactor || 1;
+    const maxFactor = o.maxFactor;
+    const triplets = [];
+    let t;
+
+    for (let c = maxFactor; c >= minFactor; c--) {
+      for (let b = c-1; b >= minFactor; b--) {
+        for (let a = b-1; a >= minFactor; a--) {
+          t = new Triplet(a, b, c);
+          if (t.isPythagorean()) {
+            if (!o.sum || (o.sum && t.sum() == o.sum)) {
+              triplets.push(t);
+            }
+          }
+        }
+      }
+    }
+    
+    return triplets;
   }
 }
