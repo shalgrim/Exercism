@@ -19,6 +19,10 @@ export class Triplet {
     return this.a ** 2 + this.b ** 2 == this.c ** 2;
   }
 
+  toString() {
+    return this.a.toString() + this.b.toString() + this.c.toString();
+  }
+
   static where(o) {
     const minFactor = o.minFactor || 1;
     const maxFactor = o.maxFactor;
