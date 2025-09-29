@@ -4,4 +4,4 @@
 
 ### Testing string has length non-zero
 
-`if ["$1"]` e.g.
+`if [ "$1" ]` e.g.
